@@ -33,7 +33,7 @@ DOMAIN-SUFFIX,twvid.com
 DOMAIN-SUFFIX,vine.co
 DOMAIN-SUFFIX,x.ai
 DOMAIN-SUFFIX,x.com
-DOMAIN-SUFFIX,xai.chronosphere.io
+DOMAIN,xai.chronosphere.io
 DOMAIN-KEYWORD,grok
 DOMAIN-KEYWORD,twitter
 IP-CIDR,192.133.76.0/22,no-resolve
