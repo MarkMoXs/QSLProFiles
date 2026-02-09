@@ -5,95 +5,95 @@
     "icons": [
         {
             "name": "Amazon",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Amazon.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Amazon.png"
         },
         {
             "name": "Apple",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Apple.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Apple.png"
         },
         {
             "name": "Bing",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Bing.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Bing.png"
         },
         {
             "name": "Cloudflare",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Cloudflare.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Cloudflare.png"
         },
         {
             "name": "Discord",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Discord.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Discord.png"
         },
         {
             "name": "Facebook",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Facebook.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Facebook.png"
         },
         {
             "name": "Gemini",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Gemini.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Gemini.png"
         },
         {
             "name": "GitHub",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/GitHub.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/GitHub.png"
         },
         {
             "name": "Google",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Google.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Google.png"
         },
         {
             "name": "iCloud",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/iCloud.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/iCloud.png"
         },
         {
             "name": "Instagram",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Instagram.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Instagram.png"
         },
         {
             "name": "Microsoft",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Microsoft.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Microsoft.png"
         },
         {
             "name": "Netflix",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Netflix.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Netflix.png"
         },
         {
             "name": "OpenAI",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/OpenAI.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/OpenAI.png"
         },
         {
             "name": "Reddit",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Reddit.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Reddit.png"
         },
         {
             "name": "Speedtest",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Speedtest.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Speedtest.png"
         },
         {
             "name": "Spotify",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Spotify.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Spotify.png"
         },
         {
             "name": "Telegram",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Telegram.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Telegram.png"
         },
         {
             "name": "TikTok",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/TikTok.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/TikTok.png"
         },
         {
             "name": "Twitch",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Twitch.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Twitch.png"
         },
         {
             "name": "Twitter",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Twitter.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Twitter.png"
         },
         {
             "name": "YouTube",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/YouTube.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/YouTube.png"
         },
         {
             "name": "Global",
-            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/icon/Global.png"
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/AppIcons/Global.png"
         }
     ]
 }
