@@ -92,8 +92,24 @@
             "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/YouTube.png"
         },
         {
+            "name": "CMedia",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CMedia.png"
+        },
+        {
+            "name": "GMedia",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/GMedia.png"
+        },
+        {
+            "name": "Mainland",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Mainland.png"
+        },
+        {
             "name": "Global",
             "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Global.png"
+        },
+        {
+            "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Others.png"
         }
     ]
 }
