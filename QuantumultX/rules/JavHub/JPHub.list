@@ -6,8 +6,8 @@
 # HOST-SUFFIX: 5
 # USER-AGENT: 0
 # TOTAL: 5
-HOST-SUFFIX,dmm.com
-HOST-SUFFIX,dmm.co.jp
-HOST-SUFFIX,mgstage.com
-HOST-SUFFIX,mgstage.jp
-HOST-SUFFIX,Prestige-av.com
+HOST-SUFFIX,dmm.com,Amazon
+HOST-SUFFIX,dmm.co.jp,Amazon
+HOST-SUFFIX,mgstage.com,Amazon
+HOST-SUFFIX,mgstage.jp,Amazon
+HOST-SUFFIX,Prestige-av.com,Amazon
