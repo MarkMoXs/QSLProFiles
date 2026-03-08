@@ -1,0 +1,18 @@
+# NAME: 规则修正
+# AUTHOR: Coco
+# REPO: https://github.com/MarkMoXs/QSLProFiles/tree/TestFiles/Loon/RuleFix
+# UPDATED: 2026-02-09 09:16:56
+# DESCRIPTION: 分流规则中未包含有的地址修正
+# DOMAIN-KEYWORD: 1
+# DOMAIN-SUFFIX: 187
+
+
+# 农行防代理检测
+DOMAIN,msmp.abchina.com.cn,REJECT
+# 抖音
+DOMAIN-SUFFIX,ndcppx.com,DIRECT
+DOMAIN-SUFFIX,ndcpp.com,DIRECT
+# DuetDisplay
+DOMAIN-SUFFIX,duetsocket.com,香港优选
+DOMAIN-SUFFIX,duetdisplay.com,香港优选
+DOMAIN-SUFFIX,duetpanel.com,香港优选
