@@ -1,0 +1,595 @@
+ipv6: false
+http_port: 1234
+socks_port: 1235
+allow_external_connections: false
+vif_only: false
+hijack_dns:
+- '*:53'
+- 8.8.8.8
+geoip_db_url: https://github.com/Moli-X/Tool/raw/X/GeoIP/CN_Country.mmdb
+asn_db_url: https://github.com/Moli-X/Tool/raw/X/GeoIP/GeoLite2-ASN.mmdb
+proxy_latency_test_url: http://www.google.com/generate_204
+direct_latency_test_url: http://www.apple.com/generate_204
+udp_latency_test_url: google.com@1.1.1.1
+compat_route: false
+dns:
+  bootstrap:
+  - system
+  upstreams:
+    China:
+    - tls://dns.alidns.com
+    - h3://dns.alidns.com/dns-query
+    - https://dns.alidns.com/dns-query
+    - quic://dns.alidns.com:853
+    - 2400:3200::1
+    Global:
+    - tls://one.one.one.one
+    - h3://one.one.one.one/dns-query
+    - https://1.1.1.1/dns-query
+    - quic://one.one.one.one:853
+    - 2606:4700:4700::1111
+  forward:
+  - domain_regex:
+      match: ^ad\..*|^ads\..*
+      value: reject
+  - proxy_rule_set:
+      match: https://github.com/Moli-X/Tool/raw/X/Loon/Rules/HTTPDNS.Block.list
+      value: reject
+      disabled: false
+  - proxy_rule_set:
+      match: https://rule.kelee.one/Loon/Google.lsr
+      value: Global
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/Loon/rules/Instagram/Instagram.list
+      value: Global
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/LoveMyself546/ACL4SSR/refs/heads/master/Clash/ProxyGFWlist.list
+      value: Global
+      disabled: false
+  - proxy_rule_set:
+      match: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+      value: China
+      disabled: false
+  - domain_wildcard:
+      match: '*'
+      value: China
+      disabled: false
+  public_ip_lookup_url: https://ifconfig.me/ip
+bypass_tunnel_proxy:
+- localhost
+- '*.local'
+- 10.0.0.0/8
+- 100.64.0.0/10
+- 127.0.0.1/32
+- 169.254.0.0/16
+- 172.16.0.0/12
+- 192.168.0.0/16
+- 224.0.0.0/4
+- 240.0.0.0/4
+- ::1/128
+- fc00::/7
+- fd00::/8
+- fe80::/10
+- ff00::/8
+- 2001::/32
+- 2001:db8::/32
+- 2002::/16
+- ::ffff:0:0:0:0/1
+- ::ffff:128:0:0:0/1
+- '*.baidu.com'
+- yunbusiness.ccb.com
+- '*.icbc.com.cn'
+- '*.abchina.com.cn'
+- '*.cmbchina.com'
+- '*.pingan.com'
+- '*.bankcomm.com'
+- '*.ccb.com'
+- '*.cebbank.com'
+- '*.cib.com.cn'
+- '*.ecitic.com'
+- '*.hxb.com.cn'
+- '*.psbc.com'
+- '*.sdb.com.cn'
+- '*.spdb.com.cn'
+- '*.gomefinance.com.cn'
+real_ip_domains:
+- pool.ntp.org
+- time.google.com
+- time.apple.com
+- '*.mzstatic.com'
+- '*.push-apple.com.akadns.net'
+- '*.push.apple.com'
+- captive.apple.com
+- connectivitycheck.android.com
+- connectivitycheck.gstatic.com
+- '*.battle.net'
+- '*.blzstatic.cn'
+- '*.battlenet.com'
+- '*.battlenet.com.cn'
+- msftconnecttest.com
+- msftncsi.com
+- '*.msftconnecttest.com'
+- '*.msftncsi.com'
+- stun.l.google.com
+- '*.srv.nintendo.net'
+- '*.stun.playstation.net'
+- stun.syncthing.net
+- xbox.*.microsoft.com
+- '*.xboxlive.com'
+policy_groups:
+- external:
+    name: 桔子云☁️
+    type: select
+    urls:
+    - https://sub.store/download/%E6%A1%94%E5%AD%90%E4%BA%91?target=Egern
+    hidden: false
+- external:
+    name: 三分云🌧️
+    type: select
+    urls:
+    - https://get.83289483.org/api/edoatrqm/token=cf4eddd16c963237432c6f711b27ef15
+    hidden: false
+- select:
+    name: 节点群组
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    icon: 😊
+    hidden: true
+- select:
+    name: 全部节点
+    policies:
+    - 桔子云☁️
+    - 三分云🌧️
+    flatten: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/United_Nations.png
+    hidden: true
+- select:
+    name: 香港
+    policies:
+    - 全部节点
+    flatten: true
+    filter: (🇭🇰)|(港)|(香港)|(HK)
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/Hong_Kong.png
+    hidden: false
+- select:
+    name: 台湾
+    policies:
+    - 全部节点
+    flatten: true
+    filter: (🇨🇳)|(台)|(台湾)|(TW)
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/Taiwan.png
+    hidden: false
+- auto_test:
+    name: 日本
+    policies:
+    - 全部节点
+    flatten: true
+    filter: (🇯🇵)|(日)|(日本)|(JP)
+    tolerance: 500
+    timeout: 3
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/Japan.png
+    hidden: false
+- select:
+    name: 美国
+    policies:
+    - 全部节点
+    flatten: true
+    filter: (🇺🇸)|(美)|(States)|(US)
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/United_States.png
+    hidden: false
+- auto_test:
+    name: 新加坡
+    policies:
+    - 全部节点
+    flatten: true
+    filter: (🇸🇬)|(新)|(新加坡)|(SG)
+    icon: https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/Singapore.png
+    hidden: false
+- select:
+    name: iPTest
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    - 全部节点
+    - DIRECT
+    flatten: false
+    icon: 🏃
+    hidden: false
+- auto_test:
+    name: Amazon
+    policies:
+    - 日本
+    flatten: true
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Amazon.png
+    hidden: false
+- select:
+    name: Apple
+    policies:
+    - DIRECT
+    - 美国
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Apple.png
+    hidden: false
+- auto_test:
+    name: Bing
+    policies:
+    - 新加坡
+    - 美国
+    flatten: true
+    tolerance: 500
+    timeout: 3
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Bing.png
+    hidden: false
+- auto_test:
+    name: Cloudflare
+    policies:
+    - 香港
+    - 台湾
+    flatten: false
+    tolerance: 500
+    timeout: 3
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Cloudflare.png
+    hidden: false
+- select:
+    name: Discord
+    policies:
+    - 香港
+    - 台湾
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Discord.png
+    hidden: false
+- select:
+    name: Instagram
+    policies:
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Instagram.png
+    hidden: false
+- select:
+    name: Facebook
+    policies:
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Facebook.png
+    hidden: false
+- select:
+    name: Gemini
+    policies:
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Gemini.png
+    hidden: false
+- select:
+    name: Google
+    policies:
+    - 香港
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Google.png
+    hidden: false
+- select:
+    name: GitHub
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/GitHub.png
+    hidden: false
+- select:
+    name: JavXxOo
+    policies:
+    - 香港
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/JavXxOo.png
+    hidden: false
+- select:
+    name: Microsoft
+    policies:
+    - DIRECT
+    - 香港
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Microsoft.png
+    hidden: false
+- select:
+    name: Netflix
+    policies:
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Netflix.png
+    hidden: false
+- select:
+    name: OpenAI
+    policies:
+    - 台湾
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/ChatGPT.png
+    hidden: false
+- select:
+    name: Telegram
+    policies:
+    - 香港
+    - 台湾
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Telegram.png
+    hidden: false
+- select:
+    name: TikTok
+    policies:
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/TikTok.png
+    hidden: false
+- select:
+    name: Twitter
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Twitter.png
+    hidden: false
+- select:
+    name: YouTube
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/YouTube.png
+    hidden: false
+- select:
+    name: Global
+    policies:
+    - 香港
+    - 台湾
+    - 日本
+    - 美国
+    - 新加坡
+    flatten: false
+    block_quic: true
+    icon: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Global.png
+    hidden: false
+rules:
+- domain:
+    name: 桔子云
+    match: su.juzicloud.vip
+    policy: DIRECT
+    disabled: false
+- domain:
+    name: 本地ip查询
+    match: myip.ipip.net
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    name: iPTest
+    match: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/iPTest.list
+    policy: iPTest
+    disabled: false
+- rule_set:
+    name: Amazon
+    match: https://rule.kelee.one/Loon/Amazon.lsr
+    policy: Amazon
+    disabled: false
+- rule_set:
+    name: Apple
+    match: https://rule.kelee.one/Loon/Apple.lsr
+    policy: Apple
+    disabled: false
+- rule_set:
+    name: Bing
+    match: https://rule.kelee.one/Loon/Bing.lsr
+    policy: Bing
+    disabled: false
+- rule_set:
+    name: Cloudflare
+    match: https://rule.kelee.one/Loon/Cloudflare.lsr
+    policy: Cloudflare
+    disabled: false
+- rule_set:
+    name: Discord
+    match: https://rule.kelee.one/Loon/Discord.lsr
+    policy: Discord
+    disabled: false
+- rule_set:
+    name: Instagram
+    match: https://rule.kelee.one/Loon/Instagram.lsr
+    policy: Instagram
+    disabled: false
+- rule_set:
+    name: Facebook
+    match: https://rule.kelee.one/Loon/Facebook.lsr
+    policy: Facebook
+    disabled: false
+- rule_set:
+    name: Gemini
+    match: https://rule.kelee.one/Loon/Gemini.lsr
+    policy: Gemini
+    disabled: false
+- rule_set:
+    name: Google
+    match: https://rule.kelee.one/Loon/Google.lsr
+    policy: Google
+    disabled: false
+- rule_set:
+    name: GitHub
+    match: https://rule.kelee.one/Loon/GitHub.lsr
+    policy: GitHub
+    disabled: false
+- rule_set:
+    name: JavHub JP
+    match: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/Loon/rules/JavHub/JPHub.list
+    policy: Amazon
+    disabled: false
+- rule_set:
+    name: JavHub CN
+    match: https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/Loon/rules/JavHub/JavHub.list
+    policy: JavXxOo
+    disabled: false
+- rule_set:
+    name: Microsoft
+    match: https://rule.kelee.one/Loon/Microsoft.lsr
+    policy: Microsoft
+    disabled: false
+- rule_set:
+    name: Netflix
+    match: https://rule.kelee.one/Loon/Netflix.lsr
+    policy: Netflix
+    disabled: false
+- rule_set:
+    name: OpenAI
+    match: https://rule.kelee.one/Loon/OpenAI.lsr
+    policy: OpenAI
+    disabled: false
+- rule_set:
+    name: Telegram
+    match: https://rule.kelee.one/Loon/Telegram.lsr
+    policy: Telegram
+    disabled: false
+- rule_set:
+    name: TikTok
+    match: https://rule.kelee.one/Loon/TikTok.lsr
+    policy: TikTok
+    disabled: false
+- rule_set:
+    name: Twitter
+    match: https://rule.kelee.one/Loon/Twitter.lsr
+    policy: Twitter
+    disabled: false
+- rule_set:
+    name: YouTube
+    match: https://rule.kelee.one/Loon/YouTube.lsr
+    policy: YouTube
+    disabled: false
+- rule_set:
+    name: 国内媒体
+    match: https://rule.kelee.one/Loon/ChinaMedia.lsr
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    name: 国内网站
+    match: https://rule.kelee.one/Loon/ChinaMax.lsr
+    policy: DIRECT
+    disabled: false
+- rule_set:
+    name: 国际媒体
+    match: https://rule.kelee.one/Loon/GlobalMedia.lsr
+    policy: Global
+    disabled: false
+- rule_set:
+    name: 国际网站
+    match: https://rule.kelee.one/Loon/Global.lsr
+    policy: Global
+    disabled: false
+- rule_set:
+    name: 阻止常见DNS
+    match: https://github.com/Moli-X/Tool/raw/X/Loon/Rules/HTTPDNS.Block.list
+    policy: REJECT
+    disabled: false
+- rule_set:
+    name: BanAD
+    match: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
+    policy: REJECT
+- rule_set:
+    name: 广告列表
+    match: https://github.com/Moli-X/Tool/raw/X/Loon/Rules/Reject.list
+    policy: REJECT
+    disabled: false
+- rule_set:
+    name: AdBlockLoon
+    match: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockloon.list
+    policy: REJECT
+- rule_set:
+    name: Ads_SukkaW
+    match: https://raw.githubusercontent.com/Repcz/Tool/refs/heads/X/Loon/Rules/Ads_SukkaW.list
+    policy: REJECT
+    disabled: false
+- domain:
+    name: 农业银行检查
+    match: msmp.abchina.com.cn
+    policy: REJECT
+    disabled: false
+- domain_regex:
+    match: ^ad\..*|^ads\..*
+    policy: REJECT
+- geoip:
+    match: CN
+    policy: DIRECT
+    no_resolve: false
+    disabled: false
+- default:
+    name: 漏网之鱼
+    policy: Global
+scriptings:
+- generic:
+    name: BWH
+    script_url: https://raw.githubusercontent.com/xcgtb/Egern-Widgets/main/Probe.js
+    update_interval: 604800
+- generic:
+    name: iP 查询
+    script_url: https://raw.githubusercontent.com/Roddy-D/modules/refs/heads/main/iptestwidget.js
+    update_interval: 604800
+- generic:
+    name: IP
+    script_url: https://raw.githubusercontent.com/Ccccf123/EgernX/refs/heads/main/ip.js
+    update_interval: 604800
+mitm:
+  ca_p12: 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
+  ca_passphrase: egern
+widgets:
+- name: iP 查询
+  script_name: iP 查询
+- name: 网络
+  script_name: IP
+modules:
+- name: Sub-Store
+  url: https://raw.githubusercontent.com/sub-store-org/Sub-Store/master/config/Egern.yaml
+  enabled: true
