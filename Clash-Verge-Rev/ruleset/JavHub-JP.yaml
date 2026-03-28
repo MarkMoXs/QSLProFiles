@@ -1,0 +1,14 @@
+# NAME: JAVHub
+# AUTHOR: Japan
+# REPO:
+# UPDATED: 2026-02-08 09:16:53
+# DOMAIN-KEYWORD: 0
+# DOMAIN-SUFFIX: 5
+# USER-AGENT: 0
+# TOTAL: 5
+payload:
+  - DOMAIN-SUFFIX,dmm.com
+  - DOMAIN-SUFFIX,dmm.co.jp
+  - DOMAIN-SUFFIX,mgstage.com
+  - DOMAIN-SUFFIX,mgstage.jp
+  - DOMAIN-SUFFIX,Prestige-av.com
