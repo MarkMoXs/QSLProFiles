@@ -109,6 +109,26 @@
         },
         {
             "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/DIRECT.png"
+        },
+        {
+            "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CustomDIRECT.png"
+        },
+        {
+            "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/PROXY.png"
+        },
+        {
+            "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CustomPROXY.png"
+        },
+        {
+            "name": "Others",
+            "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/NoAds.png"
+        },
+        {
+            "name": "Others",
             "url": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Others.png"
         }
     ]
