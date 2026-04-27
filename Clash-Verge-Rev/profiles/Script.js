@@ -1,5 +1,6 @@
 // 国内DNS服务器
 const domesticNameservers = [
+  "https://dns.alidns.com/dns-query", // 阿里DNSPod DoH
   "https://223.5.5.5/dns-query", // 阿里DoH
   "https://doh.pub/dns-query" // 腾讯DoH，因腾讯云即将关闭免费版IP访问，故用域名
 ];
@@ -120,7 +121,7 @@ const ruleProviders = {
     "path": "./ruleset/kelee/Apple.yaml"
   },
 
-// 3 👃 Bing 必应
+// 3 🅱️ Bing 必应
   "Bing": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -168,7 +169,7 @@ const ruleProviders = {
     "path": "./ruleset/kelee/Gemini.yaml"
   },
 
-// 9 🧬 Google 谷歌
+// 9 🔍 Google 谷歌
   "Google": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -200,7 +201,7 @@ const ruleProviders = {
     "path": "./ruleset/MarkMoXs/JavHub-CN.yaml"
   },
 
-// 13 🧑‍💻 Microsoft 微软
+// 13 🖥️ Microsoft 微软
   "Microsoft": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -264,7 +265,7 @@ const ruleProviders = {
     "path": "./ruleset/kelee/TikTok.yaml"
   },
 
-// 21 📔Twitch
+// 21 📔 Twitch
   "Twitch": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -272,7 +273,7 @@ const ruleProviders = {
     "path": "./ruleset/kelee/Twitch.yaml"
   },
 
-// 22 🐧 Twitter 推特
+// 22 🐦 Twitter 推特
   "Twitter": {
     ...ruleProviderCommon,
     "behavior": "classical",
@@ -286,6 +287,38 @@ const ruleProviders = {
     "behavior": "classical",
     "url": "https://rule.kelee.one/Clash/YouTube.yaml",
     "path": "./ruleset/kelee/YouTube.yaml"
+  },
+
+// 24 🎞️ 中国媒体
+  "ChinaMedia": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://rule.kelee.one/Clash/ChinaMedia.yaml",
+    "path": "./ruleset/kelee/ChinaMedia.yaml"
+  },
+
+// 25 🌏 中国网站
+  "ChinaMax": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://rule.kelee.one/Clash/ChinaMax.yaml",
+    "path": "./ruleset/kelee/ChinaMax.yaml"
+  },
+
+// 26 🎥 国际媒体
+  "GlobalMedia": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://rule.kelee.one/Clash/GlobalMedia.yaml",
+    "path": "./ruleset/kelee/GlobalMedia.yaml"
+  },
+
+// 27 🗺️ 国际网站
+  "Global": {
+    ...ruleProviderCommon,
+    "behavior": "classical",
+    "url": "https://rule.kelee.one/Clash/Global.yaml",
+    "path": "./ruleset/kelee/Global.yaml"
   },
 
   "reject": {
@@ -358,32 +391,40 @@ const rules = [
   "PROCESS-NAME,steam.exe,🚝 自定义直连",
   // 自定义 DOMAIN-SUFFIX 域名后缀规则
   "DOMAIN-SUFFIX,immersivetranslate.com,🚒 自定义代理",
+  "DOMAIN-SUFFIX,mb3admin.com,🚝 自定义直连",// Emby
+  "DOMAIN-SUFFIX,darkreader.org,🚝 自定义直连",// Emby
+  "DOMAIN-SUFFIX,tailscale.com,🔍 Google",
+  // 自定义 DOMAIN 域名匹配规则
   "DOMAIN,v2rayse.com,👨‍🚀 模式选择", // V2rayse节点工具
 
   // kelee 远程规则集
-  "RULE-SET,Amazon,Amazon",
-  "RULE-SET,Apple,Apple",
-  "RULE-SET,Bing,Bing",
-  "RULE-SET,Cloudflare,Cloudflare",
-  "RULE-SET,Discord,Discord",
-  "RULE-SET,Instagram,Instagram",
-  "RULE-SET,Facebook,Facebook",
-  "RULE-SET,Gemini,Gemini",
-  "RULE-SET,Google,Google",
-  "RULE-SET,GitHub,GitHub",
-  "RULE-SET,JavHub JP,JavHub JP",
-  "RULE-SET,JavHub CN,JavHub CN",
-  "RULE-SET,Microsoft,Microsoft",
-  "RULE-SET,Netflix,Netflix",
-  "RULE-SET,OpenAI,OpenAI",
-  "RULE-SET,Reddit,Reddit",
-  "RULE-SET,Speedtest,Speedtest",
-  "RULE-SET,Spotify,Spotify",
-  "RULE-SET,Telegram,Telegram",
-  "RULE-SET,TikTok,TikTok",
-  "RULE-SET,Twitch,Twitch",
-  "RULE-SET,Twitter,Twitter",
-  "RULE-SET,YouTube,YouTube",
+  "RULE-SET,Amazon,🛍️ Amazon",
+  "RULE-SET,Apple,🍎 Apple",
+  "RULE-SET,Bing,🅱️ Bing",
+  "RULE-SET,Cloudflare,⛅ Cloudflare",
+  "RULE-SET,Discord,🐼 Discord",
+  "RULE-SET,Instagram,🥁 Instagram",
+  "RULE-SET,Facebook,📖 Facebook",
+  "RULE-SET,Gemini,✴️ Gemini",
+  "RULE-SET,Google,🔍 Google",
+  "RULE-SET,GitHub,⛄️ GitHub",
+  "RULE-SET,JavHub JP,🙅🏻 JavHub JP",
+  "RULE-SET,JavHub CN,🙅🏻‍♂️ JavHub CN",
+  "RULE-SET,Microsoft,🖥️ Microsoft",
+  "RULE-SET,Netflix,🎬 Netflix",
+  "RULE-SET,OpenAI,🤖 OpenAI",
+  "RULE-SET,Reddit,🐹 Reddit",
+  "RULE-SET,Speedtest,⏲️ Speedtest",
+  "RULE-SET,Spotify,🎼 Spotify",
+  "RULE-SET,Telegram,📟 Telegram",
+  "RULE-SET,TikTok,🎶 TikTok",
+  "RULE-SET,Twitch,📔 Twitch",
+  "RULE-SET,Twitter,🐦 Twitter",
+  "RULE-SET,YouTube,📺 YouTube",
+  "RULE-SET,ChinaMedia,🎞️ 中国媒体",
+  "RULE-SET,ChinaMax,🌏 中国网站",
+  "RULE-SET,GlobalMedia,🎥 国际媒体",
+  "RULE-SET,Global,🗺️ 国际网站",
   // Loyalsoldier 规则集
   "RULE-SET,applications,💻 全局直连",
   "RULE-SET,private,💻 全局直连",
@@ -542,7 +583,7 @@ const proxyGroupsConfig = [
 // 1 🛍️ Amazon 亚马逊
     {
       ...groupBaseOption,
-      "name": "Amazon",
+      "name": "🛍️ Amazon",
       "type": "select",
       "proxies": ["🇯🇵 日本 JP", "🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -552,17 +593,17 @@ const proxyGroupsConfig = [
 // 2 🍎 Apple 苹果
     {
       ...groupBaseOption,
-      "name": "Apple",
+      "name": "🍎 Apple",
       "type": "select",
       "proxies": [ "💻 全局直连", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Apple.png"
     },
 
-// 3 👃 Bing 必应
+// 3 🅱️ Bing 必应
     {
       ...groupBaseOption,
-      "name": "Bing",
+      "name": "🅱️ Bing",
       "type": "select",
       "proxies": ["🇸🇬 新加坡 SG", "🇺🇸 美国 US", "🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇰🇷 韩国 KR", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -572,7 +613,7 @@ const proxyGroupsConfig = [
 // 4 ⛅ Cloudflare 验证
     {
       ...groupBaseOption,
-      "name": "Cloudflare",
+      "name": "⛅ Cloudflare",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -582,7 +623,7 @@ const proxyGroupsConfig = [
 // 5 🐼 Discord
     {
       ...groupBaseOption,
-      "name": "Discord",
+      "name": "🐼 Discord",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -590,10 +631,9 @@ const proxyGroupsConfig = [
     },
 
 // 6 🥁 Instagram
-
     {
       ...groupBaseOption,
-      "name": "Instagram",
+      "name": "🥁 Instagram",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -603,7 +643,7 @@ const proxyGroupsConfig = [
 // 7 📖 Facebook 脸书
     {
       ...groupBaseOption,
-      "name": "Facebook",
+      "name": "📖 Facebook",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -613,17 +653,17 @@ const proxyGroupsConfig = [
 // 8 ✴️ Gemini 谷歌
     {
       ...groupBaseOption,
-      "name": "Gemini",
+      "name": "✴️ Gemini",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Gemini.png"
     },
 
-// 9 🧬 Google 谷歌
+// 9 🔍 Google 谷歌
     {
       ...groupBaseOption,
-      "name": "Google",
+      "name": "🔍 Google",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -633,7 +673,7 @@ const proxyGroupsConfig = [
 // 10 ⛄️ GitHub
     {
       ...groupBaseOption,
-      "name": "GitHub",
+      "name": "⛄️ GitHub",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -643,9 +683,9 @@ const proxyGroupsConfig = [
 // 11 🔞 R18+ JP
     {
       ...groupBaseOption,
-      "name": "JavHub JP",
+      "name": "🙅🏻 JavHub JP",
       "type": "select",
-      "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "proxies": ["🇯🇵 日本 JP", "🇹🇼 台湾 TW", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🇭🇰 香港 HK", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/JavXxOo.png"
     },
@@ -653,17 +693,17 @@ const proxyGroupsConfig = [
 // 12 🔞 R18+ CN
     {
       ...groupBaseOption,
-      "name": "JavHub CN",
+      "name": "🙅🏻‍♂️ JavHub CN",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/JavXxOo.png"
     },
 
-// 13 🧑‍💻 Microsoft 微软
+// 13 🖥️ Microsoft 微软
     {
       ...groupBaseOption,
-      "name": "Microsoft",
+      "name": "🖥️ Microsoft",
       "type": "select",
       "proxies": ["💻 全局直连", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
       "include-all": true,
@@ -673,7 +713,7 @@ const proxyGroupsConfig = [
 // 14 🎬 Netflix 奈飞
     {
       ...groupBaseOption,
-      "name": "Netflix",
+      "name": "🎬 Netflix",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -683,7 +723,7 @@ const proxyGroupsConfig = [
 // 15 🤖 OpenAI
     {
       ...groupBaseOption,
-      "name": "OpenAI",
+      "name": "🤖 OpenAI",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -693,7 +733,7 @@ const proxyGroupsConfig = [
 // 16 🐹 Reddit 社区
     {
       ...groupBaseOption,
-      "name": "Reddit",
+      "name": "🐹 Reddit",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -703,7 +743,7 @@ const proxyGroupsConfig = [
 // 17 ⏲️ Speedtest 测速
     {
       ...groupBaseOption,
-      "name": "Speedtest",
+      "name": "⏲️ Speedtest",
       "type": "select",
       "proxies": ["💻 全局直连", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
       "include-all": true,
@@ -713,7 +753,7 @@ const proxyGroupsConfig = [
 // 18 🎼 Spotify
     {
       ...groupBaseOption,
-      "name": "Spotify",
+      "name": "🎼 Spotify",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -723,7 +763,7 @@ const proxyGroupsConfig = [
 // 19 📟 Telegram 电报
     {
       ...groupBaseOption,
-      "name": "Telegram",
+      "name": "📟 Telegram",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -733,26 +773,27 @@ const proxyGroupsConfig = [
 // 20 🎶 TikTok
     {
       ...groupBaseOption,
-      "name": "TikTok",
+      "name": "🎶 TikTok",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/TikTok.png"
     },
 
-// 21 📔Twitch
+// 21 📔 Twitch
     {
       ...groupBaseOption,
-      "name": "Twitch",
+      "name": "📔 Twitch",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Twitch.png"
     },
-// 22 🐧 Twitter 推特
+
+// 22 🐦 Twitter 推特
     {
       ...groupBaseOption,
-      "name": "Twitter",
+      "name": "🐦 Twitter",
       "type": "select",
       "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
@@ -762,35 +803,70 @@ const proxyGroupsConfig = [
 // 23 📺 YouTube 油管
     {
       ...groupBaseOption,
-      "name": "YouTube",
+      "name": "📺 YouTube",
       "type": "select",
       "proxies": ["🇹🇼 台湾 TW", "🇭🇰 香港 HK", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/YouTube.png"
     },
+
+// 24 🎞️ 中国媒体
     {
       ...groupBaseOption,
-      "name": "🥳 国外媒体",
+      "name": "🎞️ 中国媒体",
+      "type": "select",
+      "proxies": ["💻 全局直连", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CMedia.png"
+    },
+
+// 25 🌏 中国网站
+    {
+      ...groupBaseOption,
+      "name": "🌏 中国网站",
+      "type": "select",
+      "proxies": ["💻 全局直连", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Mainland.png"
+    },
+
+// 26 🎥 国际媒体
+    {
+      ...groupBaseOption,
+      "name": "🎥 国际媒体",
       "type": "select",
       "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/youtube.svg"
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/GMedia.png"
     },
+
+// 27 🗺️ 国际网站
+    {
+      ...groupBaseOption,
+      "name": "🗺️ 国际网站",
+      "type": "select",
+      "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "include-all": true,
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Global.png"
+    },
+
     {
       ...groupBaseOption,
       "name": "🚯 阻止广告",
       "type": "select",
       "proxies": ["REJECT", "DIRECT"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/bug.svg"
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/NoAds.png"
     },
+
     {
       ...groupBaseOption,
       "name": "💻 全局直连",
       "type": "select",
       "proxies": ["DIRECT", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
       "include-all": true,
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/link.svg"
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/DIRECT.png"
     },
+
     {
       ...groupBaseOption,
       "name": "❌ 全局拦截",
@@ -798,22 +874,25 @@ const proxyGroupsConfig = [
       "proxies": ["REJECT", "DIRECT"],
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/block.svg"
     },
+
     {
       ...groupBaseOption,
       "name": "🚝 自定义直连",
       "type": "select",
       "include-all": true,
       "proxies": ["💻 全局直连", "👨‍🚀 模式选择", "🚀 节点选择", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/unknown.svg"
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CustomDIRECT.png"
     },
+
     {
       ...groupBaseOption,
       "name": "🚒 自定义代理",
       "type": "select",
       "include-all": true,
       "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
-      "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/openwrt.svg"
+      "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CustomPROXY.png"
     },
+
     {
       ...groupBaseOption,
       "name": "🐟 漏网之鱼",
