@@ -589,7 +589,7 @@ const proxyGroupsConfig = [
       "name": "🇺🇸 美国 US",
       "type": "select",
       "include-all": true,
-      "filter": "(🇺🇸)|(美)|(States)|(US)",
+      "filter": "(🇺🇸)|(美)|(美国)|(States)|(US)",
       "icon": "https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/United_States.png"
     },
     {
@@ -597,7 +597,7 @@ const proxyGroupsConfig = [
       "name": "🇸🇬 新加坡 SG",
       "type": "select",
       "include-all": true,
-      "filter": "🇸🇬 新加坡 SG",
+      "filter": "(🇸🇬)|(新)|(新加坡)|(SG)",
       "icon": "https://raw.githubusercontent.com/MarkMoXs/Qure/refs/heads/master/IconSet/Color/Singapore.png"
     },
 
@@ -937,7 +937,7 @@ const proxyProviders = {
   },
   "🏖️ 桔子云": {
     "type": "http",   // 订阅链接
-    "url": "https://juzi82.xyz/auth/register?code=2t0z",
+    "url": "https://su.juzicloud.vip/link/5eOHHgtOpfGYoo?clash=1",
     "interval": 86400,  // 自动更新时间 86400 (秒) / 3600 = 24 小时
     "proxy": "👨‍🚀 模式选择",
     "override": {
