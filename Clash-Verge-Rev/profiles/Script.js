@@ -2,11 +2,12 @@
 const domesticNameservers = [
   "https://dns.alidns.com/dns-query", // 阿里DNSPod DoH
   "https://223.5.5.5/dns-query", // 阿里DoH
-  "https://doh.pub/dns-query" // 腾讯DoH，因腾讯云即将关闭免费版IP访问，故用域名
+  "https://doh.pub/dns-query" // 腾讯DoH
 ];
 
 // 国外DNS服务器
 const foreignNameservers = [
+  "https://dns.alidns.com/dns-query", // 阿里DNSPod DoH
   "https://cloudflare-dns.com/dns-query", // CloudflareDNS
   "https://77.88.8.8/dns-query", //YandexDNS
   "https://8.8.4.4/dns-query#ecs=1.1.1.1/24&ecs-override=true", // GoogleDNS
@@ -41,6 +42,7 @@ const dnsConfig = {
     // 本地主机/设备
     "+.lan",
     "+.local",
+    "+.localhost",
     // // Windows网络出现小地球图标
     "+.msftconnecttest.com",
     "+.msftncsi.com",
@@ -394,8 +396,27 @@ const rules = [
   "DOMAIN-SUFFIX,mb3admin.com,🚝 自定义直连",// Emby
   "DOMAIN-SUFFIX,darkreader.org,🚝 自定义直连",// Emby
   "DOMAIN-SUFFIX,tailscale.com,🔍 Google",
+  "DOMAIN-SUFFIX,adobe.io,🚯 阻止广告",// Adobe
+  "DOMAIN-SUFFIX,adobestats.io,🚯 阻止广告",// Adobe
+  "DOMAIN,tos-d-x-hl.snssdk.com,💻 全局直连",// 字节豆包上传 tiktok可能需要
   // 自定义 DOMAIN 域名匹配规则
   "DOMAIN,v2rayse.com,👨‍🚀 模式选择", // V2rayse节点工具
+  "DOMAIN,activate.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,practivate.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,ereg.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,activate.wip3.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,wip3.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,3dns-3.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,3dns-2.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,adobe-dns.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,adobe-dns-2.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,adobe-dns-3.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,ereg.wip3.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,activate-sea.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,wwis-dubc1-vip60.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,activate-sjc0.adobe.com,🚯 阻止广告",// Adobe
+  "DOMAIN,adobeereg.com,🚯 阻止广告",// Adobe
+  "DOMAIN,adobe.io,🚯 阻止广告",// Adobe
 
   // kelee 远程规则集
   "RULE-SET,Amazon,🛍️ Amazon",
@@ -835,7 +856,7 @@ const proxyGroupsConfig = [
       ...groupBaseOption,
       "name": "🎥 国际媒体",
       "type": "select",
-      "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/GMedia.png"
     },
@@ -845,7 +866,7 @@ const proxyGroupsConfig = [
       ...groupBaseOption,
       "name": "🗺️ 国际网站",
       "type": "select",
-      "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/Global.png"
     },
@@ -889,7 +910,7 @@ const proxyGroupsConfig = [
       "name": "🚒 自定义代理",
       "type": "select",
       "include-all": true,
-      "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "icon": "https://raw.githubusercontent.com/MarkMoXs/QSLProFiles/refs/heads/TestFiles/FrostyIcon/CustomPROXY.png"
     },
 
@@ -897,7 +918,7 @@ const proxyGroupsConfig = [
       ...groupBaseOption,
       "name": "🐟 漏网之鱼",
       "type": "select",
-      "proxies": ["👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
+      "proxies": ["🇭🇰 香港 HK", "🇹🇼 台湾 TW", "🇯🇵 日本 JP", "🇰🇷 韩国 KR", "🇺🇸 美国 US", "🇸🇬 新加坡 SG", "👨‍🚀 模式选择", "🚀 节点选择", "🏠 落地节点", "⏲️ 延迟选优", "🚑 故障转移", "⚖️ 负载均衡(散列)", "🪐 负载均衡(轮询)", "💻 全局直连"],
       "include-all": true,
       "icon": "https://fastly.jsdelivr.net/gh/clash-verge-rev/clash-verge-rev.github.io@main/docs/assets/icons/fish.svg"
     }
